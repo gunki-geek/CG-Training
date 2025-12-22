@@ -13,11 +13,30 @@ This repository contains training and evaluation code for **Confidence-Gated Tra
 - `eval.py`: evaluation on CIFAR-100 (per-exit accuracy, early-exit behavior, and inference time).
 
 ## Requirements
-- Python 3.9+
+The code was tested on Linux Ubuntu 20.04.6 LTS.
+- Python 3.8+
 - PyTorch + torchvision
 - NVIDIA GPU recommended for speed (CPU also works)
 
 Install (example):
+Optional but recommended:
+Create and activate a virtual environment
+### On Windows (PowerShell):
+```bash
+python -m venv cgt_env
+cgt_env\Scripts\Activate
+```
+### On Linux/macOS:
+```bash
+python3 -m venv cgt_env
+source cgt_env/bin/activate
+```
+Replace cu118 with your CUDA version if needed 
+```bash
+pip install torch torchvision --index-url https://download.pytorch.org/whl/cu118
+pip install -r requirements.txt
+
+```
 ```bash
 pip install torch torchvision
 
