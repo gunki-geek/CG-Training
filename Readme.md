@@ -78,7 +78,7 @@ python3 train_hard_cgt.py \
 ```
 
 ## Evaluate best models
-To reproduce the best results of our experiments run the following commands
+To reproduce the results of the best trained models in our experiments, run the following commands
 
 ### Best HardCGT model
 ```bash
@@ -95,8 +95,9 @@ The evaluation script measures accuracy, early-exit behavior, and efficiency of 
 Specifically, it reports:
 
 Per-exit accuracy: each exit evaluated independently on all test samples.
-Early-exit accuracy and exit distribution under confidence-based inference.
-Average inference time per sample, properly synchronized on GPU.
+Exit distribution under confidence-based inference.
+The model overall performance when thresholding with tau at inference.
+Average inference time per sample.
 
 ### Evaluation Command (Single Threshold)
 replace the argument to ckpt with the actual save path of your trained model
