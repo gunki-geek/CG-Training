@@ -1,18 +1,3 @@
-# HardCGT + lambda-anneal training for early-exit ResNet on CIFAR-100
-# with **stronger augmentation** (RandAugment + RandomErasing) and label smoothing.
-#
-# HardCGT gating (per sample i, exit e):
-#   m_e(i) = 1{ (max softmax prob at exit e) >= tau_train  AND  argmax == y_gt }
-#   elig_1(i) = 1
-#   elig_e(i) = Π_{k<e} (1 - m_k(i))   (deeper exits get gradients only if earlier exits fail)
-#
-# Final per-exit weight:
-#   w_e(i) = lambda_e(epoch) * elig_e(i) + eps_leak
-# Optionally normalized per sample.
-#
-# Run:
-#   python train_resnet_att_earlyexit_hardcgt_cifar100_tau_lambda_anneal_strongaug.py
-#
 # Needs: resnet.py in same folder.
 
 import os

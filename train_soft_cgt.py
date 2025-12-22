@@ -1,10 +1,3 @@
-
-# SoftCGT + lambda-anneal training for early-exit ResNet on CIFAR-100
-# with **stronger augmentation** (RandAugment + RandomErasing) and label smoothing.
-#
-# Run:
-#   python train_resnet_att_earlyexit_softcgt_cifar100_tau_lambda_anneal_strongaug.py
-#
 # Needs: resnet.py in same folder.
 
 import os

@@ -1,16 +1,8 @@
-
-# Evaluate a trained early-exit ResNet (from your resnet.py) on CIFAR-100.
+# Evaluate a trained early-exit ResNet on CIFAR-100.
 # Outputs:
 # - Accuracy of each exit head (evaluated independently on ALL test samples)
 # - Early-exit distribution (fraction of samples exiting at each exit) for a given tau
 # - Early-exit overall accuracy (with that tau)
-#
-# Usage (Windows):
-#   python eval_resnet_earlyexit_cifar100.py --ckpt checkpoints/best_resnet18_att_hardcgt_cifar100_tau_lambda_anneal.pth --tau 0.9
-#
-# Notes:
-# - resnet.py forward returns (outs_deep2shallow, feats) where outs = [out4, out3, out2, out1].
-# - We reorder to shallow->deep: [out1, out2, out3, out4] for exiting.
 
 import argparse
 from typing import List, Tuple
