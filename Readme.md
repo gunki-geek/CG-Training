@@ -91,13 +91,12 @@ python3 eval_softCGT.py
 
 ## Evaluation
 The evaluation script measures accuracy, early-exit behavior, and efficiency of a trained model.
-
 Specifically, it reports:
 
--Per-exit accuracy: each exit evaluated independently on all test samples.
--Exit distribution under confidence-based inference.
--The model overall performance when thresholding with tau at inference.
--Average inference time per sample.
+- Per-exit accuracy: each exit evaluated independently on all test samples.
+- Exit distribution under confidence-based inference.
+- The model overall performance when thresholding with tau at inference.
+- Average inference time per sample.
 
 ### Evaluation Command (Single Threshold)
 replace the argument to ckpt with the actual save path of your trained model
