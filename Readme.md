@@ -16,17 +16,11 @@ This repository contains training and evaluation code for **Confidence-Gated Tra
 The code was tested on Linux Ubuntu 20.04.6 LTS.
 - Python 3.8+
 - PyTorch + torchvision
-- NVIDIA GPU recommended for speed (CPU also works)
+- NVIDIA GPU recommended for speed (CPU also works). We used NVIDIA TITAN RTX GPU + Intel® Xeon(R) CPU E5-2637 v3 in our expeiments
 
 Install (example):
 Optional but recommended:
 Create and activate a virtual environment
-### On Windows (PowerShell):
-```bash
-python -m venv cgt_env
-cgt_env\Scripts\Activate
-```
-### On Linux/macOS:
 ```bash
 python3 -m venv cgt_env
 source cgt_env/bin/activate
@@ -37,10 +31,16 @@ pip install torch torchvision --index-url https://download.pytorch.org/whl/cu118
 pip install -r requirements.txt
 
 ```
+Verify the installation
 ```bash
-pip install torch torchvision
-
+python - << EOF
+import torch
+print("PyTorch:", torch.__version__)
+print("CUDA available:", torch.cuda.is_available())
+EOF
 ```
+If CUDA available: True, your GPU is correctly detected.
+
 ## SoftCGT Training
 
 SoftCGT uses a **soft confidence-gated mechanism** where the training signal from deeper exits is modulated using the **ground-truth class probability** of earlier exits. This allows gradients to flow smoothly while prioritizing exits that fail to confidently classify a sample.
