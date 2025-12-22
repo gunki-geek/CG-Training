@@ -11,6 +11,8 @@ This repository contains training and evaluation code for **Confidence-Gated Tra
 - `train_soft_cgt.py`: SoftCGT training on CIFAR-100 using Resnet18 as backbone.
 - `train_hard_cgt.py`: HardCGT training on CIFAR-100 using Resnet18 as backbone.
 - `eval.py`: evaluation on CIFAR-100 (per-exit accuracy, early-exit behavior, and inference time).
+- `eval_hardCGT.py`: evaluation on CIFAR-100 of the best HardCGT model.
+- `eval_softCGT.py`: evaluation on CIFAR-100 of the best softCGT model.
 
 ## Requirements
 The code was tested on Linux Ubuntu 20.04.6 LTS.
