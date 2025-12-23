@@ -16,7 +16,7 @@ This repository contains training and evaluation code for **Confidence-Gated Tra
 
 ## Requirements
 The code was tested on Linux Ubuntu 20.04.6 LTS.
-- Python 3.8+
+- Python 3.9+
 - PyTorch + torchvision
 - NVIDIA GPU recommended for speed (CPU also works). We used NVIDIA TITAN RTX GPU + Intel® Xeon(R) CPU E5-2637 v3 in our expeiments
 
@@ -27,7 +27,7 @@ Create and activate a virtual environment
 python3 -m venv cgt_env
 source cgt_env/bin/activate
 ```
-Replace cu118 with your CUDA version if needed 
+Replace cu118 (cuda version 11.8) in the command below with your CUDA version if needed 
 ```bash
 pip install torch torchvision --index-url https://download.pytorch.org/whl/cu118
 pip install -r requirements.txt
@@ -63,7 +63,7 @@ python3 train_soft_cgt.py \
 ```
 
 ## HardCGT Training
-HardCGT employs a binary confidence-gated training strategy. If an early exit predicts the correct class with confidence above the threshold, gradients from deeper exits are blocked for that sample. This enforces strict exit specialization but makes HardCGT more sensitive to the choice of the confidence threshold.
+HardCGT employs a binary confidence-gated training strategy. If an early exit predicts the correct class with confidence above the threshold, gradients from deeper exits are blocked for that sample. This enforces strict exit specialization.
 
 ### HardCGT Training Command
 
